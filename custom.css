@@ -1,0 +1,28 @@
+#mySidebar{
+    background: #122f74;
+    width: 25%;
+}
+
+#mainContent{
+    margin-top: 20pt;
+    margin-left: 28%;
+    margin-right: 3%;
+}
+
+#pageContent{
+    font: medium;
+}
+
+nav{
+    color: #ffffff;
+}
+
+.nav-item:hover{
+    border-bottom: 2pt solid red;
+}
+
+.selected-item{
+    color: black;
+    background: #ffffff;
+    border-bottom: 2pt solid red;
+}

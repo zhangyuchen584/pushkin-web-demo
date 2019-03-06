@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="switch.css">
+    <script src="custom.js"></script>
+    <script src="d3.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <div class="w3-container">
+            <h2>Revevant Text</h2>
+            <table class="w3-table-all w3-card-4 w3-hoverable" id="informal_src_table">
+                
+            </table>
+        </div>
+
+        <div class="w3-container" style="margin-top:10pt;">
+            <table class="w3-table-all w3-card-4 w3-hoverable" id="formal_src_table">
+
+            </table>
+        </div>
+
+        <div class="w3-container" style="margin-top:10pt;" id="rt-detail-panel">
+            <div class="w3-bar" style="font-size: 16pt;">
+                <div class="w3-bar-item">Detail</div>
+                <div class="w3-bar-item w3-right">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="w3-bar-item w3-right">Normalization</div>
+
+            </div>
+
+            <div class="w3-card" style="width:50%;" id="rt-relevant-detail">
+                Relevant
+            </div>
+
+            <div class="w3-card" style="width:50%;" id="rt-others-detail">
+                Others
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        window.onload = function () {
+            // Fake data
+            informal_data = [
+                ["Informal Source", "Relevant (k)", "Others (k)"],
+                ["Tweets", "50", "23"], ["Youtube", "44", "17"],
+                ["Facebook", "25", "1"], ["Forum", "10", "-"]
+            ];
+
+            formal_data = [
+                ["Formal Source", "Relevant (k)", "Others (k)"], 
+                ["News", "50", "13"], ["Blog", "20", "5"]
+            ];
+
+            document.getElementById('informal_src_table').innerHTML = generate_rows(informal_data);
+            document.getElementById('formal_src_table').innerHTML = generate_rows(formal_data);
+        }
+
+
+        function generate_rows(row_list){
+            ret_str = "";
+            for (i = 0; i < row_list.length; i++) {
+                if(i==0){
+                    row_str = "";
+                    for(col in row_list[i])
+                        row_str += "<th>" + row_list[i][col] + "</th>";
+                    ret_str += "<tr>" + row_str + "</tr>"
+                }else{
+                    row_str = "";
+                    for(col in row_list[i]){
+                        row_str += "<td>" + row_list[i][col] + "</td>";
+                    }
+                    ret_str += "<tr onclick=show_data('" + row_list[i][0] + "')>" + row_str + "</tr>"
+                }
+            }
+            return ret_str;
+        }
+
+
+        function show_data(dataSource) {
+            // Fake data
+            alert(dataSource);
+        }
+
+    </script>
+</body>
+
+</html>

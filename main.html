@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PUSHKIN Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="custom.css">
+    <script src="custom.js"></script>
+
+</head>
+
+<body>
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-bar-block w3-collapse w3-top" id="mySidebar">
+        <div class="w3-container w3-display-container w3-padding-16">
+            <h3 class="w3-wide"><b>PUSHKIN Demo</b></h3>
+        </div>
+
+        <div class="w3-padding-64 w3-large" style="font-weight:bold">
+            <a onclick="clickMenu(event)" href="#" class="w3-bar-item w3-button nav-item" id='btn-rt'>Relevant Text</a>
+
+            <a onclick="clickMenu(event)" class="w3-bar-item w3-button nav-item" id="btn-ttv">Thematic Topic View</button>
+
+            <a onclick="clickMenu(event)" href="#" class="w3-bar-item w3-medium w3-button nav-item" style="padding-left:40pt;" id="btn-ttv-ippt">IPPT</a>
+            <a onclick="clickMenu(event)" href="#" class="w3-bar-item w3-medium w3-button nav-item" style="padding-left:40pt;" id="btn-ttv-ord">ORD</a>
+            <a onclick="clickMenu(event)" href="#" class="w3-bar-item w3-medium w3-button nav-item" style="padding-left:40pt;" id="btn-ttv-enl">ENLISTMENT</a>
+            <a onclick="clickMenu(event)" href="#" class="w3-bar-item w3-medium w3-button nav-item" style="padding-left:40pt;" id="btn-ttv-book">BOOKIN/OUT</a>
+            <a onclick="clickMenu(event)" href="#" class="w3-bar-item w3-medium w3-button nav-item" style="padding-left:40pt;" id="btn-ttv-others">OTHERS</a>
+
+            <a onclick="clickMenu(event)" href="#" class="w3-bar-item w3-button nav-item" id="btn-tv">Target View</a>
+            <a onclick="clickMenu(event)" href="#" class="w3-bar-item w3-button nav-item" id="btn-ev">Entity View</a>
+        </div>
+
+    </nav>
+
+    <!-- Main page -->
+    <div class="w3-main" id="mainContent">
+        <iframe id="pageContent" width=100% src='m0-welcome.html' frameborder=0 scrolling="auto" onload="resizeIframe()">
+
+        </iframe>
+    </div>
+
+</body>
+
+</html>
